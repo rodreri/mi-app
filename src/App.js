@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from './Button'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const arr = [
+    'chancho feliz',
+    'chancho triste',
+    'chancho emocionado',
+]
+
+const App = () => {
+    const miVariable = false
+
+    if(miVariable){
+        return <p>Mi variable dio true</p>
+    }
+    return(
+        <div>
+            <h1 onClick={(e) => console.log('click', e)}>Hola mundo</h1>
+            {arr.map(el => <p key ={el}>{el}</p>)}
+            <Button onClick={() => console.log('clickeado')}>Enviar</Button>
+
+        </div>
+        
+    )
 }
-
-export default App;
+export default App
